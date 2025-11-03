@@ -1,11 +1,13 @@
-const express=require('express')
-const app=express()
-require('dotenv').config()
+require("dotenv").config();
+const express = require("express");
+const app = express();
+const mongoose = require("mongoose");
 
-port=process.env.port
+
+mongoose.connect(process.env.MONGO_URI);
+port = process.env.port;
 
 
-app.listen(port,()=>{
-    console.log(`Server Running At ${port}`);
-    
-})
+app.listen(port, () => {
+  console.log(`Server Running At ${port}`);
+});
