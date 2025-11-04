@@ -21,7 +21,8 @@ const usersSchema = new mongoose.Schema({
     default: "citizen",
   },
   department: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
+    ref:'Department',
     default: null,
   },
   flagCount: {
@@ -49,7 +50,10 @@ const usersSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
-  bookMarkedReports: {},
+  bookMarkedReports: {
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'Reports',
+  },
 });
 
 module.exports = mongoose.model("Users", usersSchema);
