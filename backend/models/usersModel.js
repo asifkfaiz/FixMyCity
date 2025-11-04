@@ -22,7 +22,7 @@ const usersSchema = new mongoose.Schema({
   },
   department: {
     type: mongoose.Schema.Types.ObjectId,
-    ref:'Department',
+    ref:'Departments',
     default: null,
   },
   flagCount: {
