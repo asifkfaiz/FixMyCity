@@ -3,27 +3,32 @@ const mongoose = require("mongoose");
 const notificationSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Users",
+    ref: "User",
+    required: true,
   },
   type: {
     type: String,
+    enum: ["status_update", "comment", "upvote", "system"],
+    required: true,
   },
   reportId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Reports",
+    ref: "Report",
+    default: null,
   },
   message: {
     type: String,
+    required: true,
+    trim: true,
   },
   isRead: {
     type: Boolean,
-  },
-  createdAt: {
-    type: Date,
+    default: false,
   },
   link: {
     type: String,
+    default: null,
   },
 });
 
-module.exports = mongoose.model("Notifications", notificationSchema);
+module.exports = mongoose.model("Notification", notificationSchema);

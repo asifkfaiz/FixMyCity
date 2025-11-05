@@ -4,15 +4,24 @@ const flagsSchema = new mongoose.Schema(
   {
     flaggedUserId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Users",
+      ref: "User",
     },
     reportedById: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Users",
+      ref: "User",
+    },
+    relatedCommentId: {
+      type: mongoose.Schema.Types.ObjectId,
+      default: null,
+    },
+    relatedReportId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Report",
+      default: null,
     },
     reason: {
       type: String,
-      require: true,
+      required: true,
       trim: yes,
     },
     status: {

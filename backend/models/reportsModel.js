@@ -1,51 +1,71 @@
 const mongoose = require("mongoose");
 
-const reportsSchema = new mongoose.Schema({
-  title: {
-    type: String,
-  },
-  description: {
-    type: String,
-  },
-  category: {
-    type: String,
-  },
-  status: {
-    type: String,
-  },
-  location: {
-    type: String,
-  },
-  media: {
-    type: String,
-  },
-  createdBy: {
-    type: String,
-  },
-  assignedTo: {
-    type: String,
-  },
-  upvotes: {
-    type: String,
-  },
-  comments: {
-    type: String,
-  },
-  priority: {
-    type: String,
-  },
-  flags: {
-    type: String,
-  },
-  verified: {
-    type: String,
-  },
-  createdAt: {
-    type: Date,
-  },
-  updatedAt: {
-    type: Date,
-  },
-});
+const reportsSchema = new mongoose.Schema(
+  {
+    title: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    description: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    status: {
+      type: String,
+      enum: ["Open", "In-Progress", "Completed"],
+      default: "Open",
+      required: true,
+    },
+    location: {
+      type: String,
+      // require:true
+    },
+    media: {
+      type: String,
+    },
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+    assignedTo: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Department",
+    },
+    upvotes: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+    comments: [
+      {
+        _id: { type: mongoose.Schema.Types.ObjectId, auto: true },
+        user: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "User",
+          required: true,
+        },
+        text: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+        createdAt: {
+          type: Date,
+          default: Date.now,
+        },
+      },
+    ],
 
-module.exports = mongoose.model("Reports", reportsSchema);
+    flags: {
+      type: Number,
+      default: 0,
+    },
+    verified: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+module.exports = mongoose.model("Report", reportsSchema);

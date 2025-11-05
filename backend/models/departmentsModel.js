@@ -10,17 +10,17 @@ const departmentsSchema = new mongoose.Schema(
     code: {
       type: String,
       unique: true,
-      require: true,
+      required: true,
       trim: true,
     },
     logoUrl: {
       type: String,
-      require: true,
+      required: true,
     },
     description: {
       type: String,
       trim: true,
-      require: true,
+      required: true,
     },
   },
   {
