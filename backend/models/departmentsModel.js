@@ -1,25 +1,31 @@
 const mongoose = require("mongoose");
 
-const departmentsSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
+const departmentsSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    code: {
+      type: String,
+      unique: true,
+      require: true,
+      trim: true,
+    },
+    logoUrl: {
+      type: String,
+      require: true,
+    },
+    description: {
+      type: String,
+      trim: true,
+      require: true,
+    },
   },
-  code: {
-    type: String,
-  },
-  logoUrl: {
-    type: String,
-  },
-  description: {
-    type: String,
-  },
-  createdAt: {
-    type: Date,
-  },
-  updatedAt: {
-    type: String,
-  },
-});
+  {
+    timeseries: true,
+  }
+);
 
-module.exports = mongoose.model("Departments", departmentsSchema);
+module.exports = mongoose.model("Department", departmentsSchema);
