@@ -8,13 +8,9 @@
   --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
   --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
   --highlight: hsl(0 0% 100%);
-  --border-card: solid 1px var(--bg);
+  --border-card: solid 1px var(--text-muted);
   --shadow: 0px 2px 2px hsla(0, 0%, 0%, 0.07), 0px 4px 4px hsla(0, 0%, 0%, 0.15);
-  --primary-100: #e5f2f9;
-  --primary-200: #cfdfe7;
-  --primary-300: #3b3c3d;
-  --accent-100: #8ad2f6;
-  --accent-200: #00668c;
+
 }
 body.dark {
   --bg-dark: hsl(0 0% 0%);
@@ -27,17 +23,16 @@ body.dark {
   --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
   --highlight: hsl(0 0% 60%);
   --border-card: solid 1px var(--border);
-  --shadow: 0px 2px 2px hsla(0, 0%, 100%, 0.07),
-    0px 4px 4px hsla(0, 0%, 100%, 0.15);
-  --primary-100: #1f3a5f;
-  --primary-200: #4d648d;
-  --primary-300: #acc2ef;
-  --accent-100: #3d5a80;
-  --accent-200: #cee8ff;
+  --shadow: 0px 2px 2px hsla(0, 0%, 90%, 0.01),
+    0px 4px 4px hsla(0, 0%, 90%, 0.05);
+
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body{
+  background-color: var(--bg-light);
 }

@@ -19,14 +19,14 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      style={{
-        background: "none",
-        border: "none",
-        cursor: "pointer",
-        fontSize: "1.2rem",
-        color: "var(--bg)",
-        transition: "transform 0.2s ease",
-      }}
+      // style={{
+      //   background: "none",
+      //   border: "none",
+      //   cursor: "pointer",
+      //   fontSize: "1.2rem",
+      //   color: "var(--text)",
+      //   transition: "transform 0.2s ease",
+      // }}
       title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
     >
       {darkMode ? <Sun size={20} /> : <Moon size={20} />}
