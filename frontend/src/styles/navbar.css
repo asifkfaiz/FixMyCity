@@ -20,6 +20,10 @@
   display: flex;
   align-items: center;
   gap: 0.3rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.nav-left:hover{
+  transform: translateY(-2px);
 }
 .logo-link {
   display: flex;
@@ -41,8 +45,9 @@
 
 .logo-text {
   font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  font-weight: 600;
+  /* letter-spacing: 0.5px; */
+  font-family: var(--font-1);
   color: var(--text);
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }

@@ -11,6 +11,7 @@ function CitizenHomePage() {
     <div className="hp">
     
     <Navbar/>
+    
     <div className="homefeed">
         <div className="leftsidebar">
             <LeftSideBar/>

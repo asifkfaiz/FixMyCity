@@ -1,0 +1,19 @@
+.lsb {
+  display: flex;
+}
+.lsb1 {
+  color: var(--text);
+  border: 0.3rem solid var(--pwd);
+  border-radius: 5rem;
+  padding: 0.2rem 1rem;
+}
+.lsb1:hover{
+    background-color: var(--pwd);
+    color:var(--bg)
+}
+.lsb2 {
+  color: var(--text);
+  border: 0.3rem solid rgb(230, 183, 173);
+  border-radius: 5rem;
+  padding: 0.2rem 1rem;
+}
