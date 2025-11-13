@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const usersSchema = new mongoose.Schema(
   {
@@ -43,10 +43,6 @@ const usersSchema = new mongoose.Schema(
       type: Date,
       default: Date.now,
     },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-    },
     reportTotal: {
       type: Number,
       default: 0,
@@ -61,4 +57,4 @@ const usersSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("User", usersSchema);
+export default mongoose.model("User", usersSchema);
